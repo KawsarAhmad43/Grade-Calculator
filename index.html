@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kawsar Ahmad">
+    <title>Study Vision</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="content">
+                
+               <h2>Result Validator App</h2>
+
+               <form action="" onsubmit="myFunction()">
+                   <h3 class="container-header">Department :</h3>
+                   <input type="text" name="DepChoice" id="DepChoice" style="width: 90%; height: 5vh; border-radius: 5px; text-align: center; margin-top: 10px; box-shadow: 1px 2px 3px 2px black; margin-bottom: 10px;">
+                   <h3 class="container-header">Semester :</h3>
+                   <select name="SemChoice" id="SemChoice"  style="width: 90%; height: 5vh; border-radius: 5px; text-align: center; margin-top: 10px; box-shadow: 1px 2px 3px 2px black; margin-bottom: 10px;">
+                       <option value="1st">1st</option>
+                       <option value="2nd">2nd</option>
+                       <option value="3rd">3rd</option>
+                       <option value="4th">4th</option>
+                       <option value="5th">5th</option>
+                       <option value="6th">6th</option>
+                       <option value="7th">7th</option>
+                       <option value="8th">8th</option>
+                       <option value="9th">9th</option>
+                       <option value="10th">10th</option>
+                       <option value="11th">11th</option>
+                       <option value="12th">12th</option>
+
+                   </select>
+
+                   <a href="#"><input type="button" class="button" name="" id="" value="Explore Result" onclick="validate()" style="background: transparent; border: none; font-weight: bold;"></a>
+
+                   <h3 class="container-header" id="subject1"></h3>
+                   <input type="text" name="DepChoice" id="mark1" style="width: 90%; height: 5vh; border-radius: 5px; text-align: center; margin-top: 10px; box-shadow: 1px 2px 3px 2px black; margin-bottom: 10px;">
+
+
+                   <h3 class="container-header" id="subject2"></h3>
+                   <input type="text" name="DepChoice" id="mark2" style="width: 90%; height: 5vh; border-radius: 5px; text-align: center; margin-top: 10px; box-shadow: 1px 2px 3px 2px black; margin-bottom: 10px;">
+
+
+                   <h3 class="container-header" id="subject3"></h3>
+                   <input type="text" name="DepChoice" id="mark3" style="width: 90%; height: 5vh; border-radius: 5px; text-align: center; margin-top: 10px; box-shadow: 1px 2px 3px 2px black; margin-bottom: 10px;">
+
+                   <h3 class="container-header" id="subject4"></h3>
+                   <input type="text" name="DepChoice" id="mark4" style="width: 90%; height: 5vh; border-radius: 5px; text-align: center; margin-top: 10px; box-shadow: 1px 2px 3px 2px black; margin-bottom: 10px;">
+
+                   <h3 class="container-header" id="subject5"></h3>
+                   <input type="text" name="DepChoice" id="mark5" style="width: 90%; height: 5vh; border-radius: 5px; text-align: center; margin-top: 10px; box-shadow: 1px 2px 3px 2px black; margin-bottom: 10px;">
+
+                  
+
+
+               </form>
+               
+            <a href="#"><input type="button" class="button" name="" id="" value="Get Result" onclick="calculate()" style="background: transparent; border: none; font-weight: bold;"></a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <script>
+        function validate(){
+            var dep=document.getElementById("DepChoice").value;
+            var sem=document.getElementById("SemChoice").value;
+            // var result=dep+sem;
+    
+            // alert(result);
+
+
+            if(dep=="CSE" && sem=="1st"){
+                var sub1="C";
+                var sub2="English";
+                var sub3="Business Organizations";
+                var sub4="Math 1";
+                var sub5="Computer Basic";
+                alert("CSE department 1st semester courses will be revealed");
+                document.getElementById('subject1').innerHTML=sub1;
+                document.getElementById('subject2').innerHTML=sub2;
+                document.getElementById('subject3').innerHTML=sub3;
+                document.getElementById('subject4').innerHTML=sub4;
+                document.getElementById('subject5').innerHTML=sub5;
+
+
+
+
+
+            }
+           else if(dep=="CSE" && sem=="2nd"){
+                var sub1="C++";
+                var sub2="English 2";
+                var sub3="Analog Electronics";
+                var sub4="Math 2";
+                var sub5="Computer Basic";
+                alert("CSE department 2nd semester courses will be revealed");
+
+                document.getElementById('subject1').innerHTML=sub1;
+                document.getElementById('subject2').innerHTML=sub2;
+                document.getElementById('subject3').innerHTML=sub3;
+                document.getElementById('subject4').innerHTML=sub4;
+                document.getElementById('subject5').innerHTML=sub5;
+
+            }
+    
+    
+        }
+
+        function calculate(){
+            m1=document.getElementById('mark1').value;
+            m2=document.getElementById('mark2').value;
+            m3=document.getElementById('mark3').value;
+            m4=document.getElementById('mark4').value;
+            m5=document.getElementById('mark5').value;
+
+            if(m1>=80){
+                var grade1="A+";
+            }
+            else if(m1>=70 && m1<=80){
+                var grade2="A";
+            }
+            else if(m1>=60 && m1<=70){
+                var grade3="A-";
+            }
+            else if(m1>=50 && m1<=60){
+                var grade4="B";
+            }
+            else if(m1>=40 && m1<=50){
+                var grade5="C";
+            }
+            else if(m1>=33 && m1<=40){
+                var grade6="D";
+            }
+            else{
+                var grade7="F";
+            }
+
+
+
+            if(grade1 || grade2 || grade3 || grade4 || grade5 || grade6 || grade7=="F"){
+               var MainGrade="F";
+            }
+            else if(grade1 || grade2 || grade3 || grade4 || grade5 || grade6 || grade7=="D"){
+                var MainGrade="D";
+
+            }
+            else if(grade1 || grade2 || grade3 || grade4 || grade5 || grade6 || grade7=="C"){
+                var MainGrade="C";
+
+            }
+            else if(grade1 || grade2 || grade3 || grade4 || grade5 || grade6 || grade7=="B"){
+                var MainGrade="B";
+
+            }
+            else if(grade1 || grade2 || grade3 || grade4 || grade5 || grade6 || grade7=="A-"){
+                var MainGrade="A-";
+
+            }
+            else{
+
+                var MainGrade="A+";
+
+            }
+
+
+            
+
+            var result=parseInt(m1)+parseInt(m2)+parseInt(m3)+parseInt(m4)+parseInt(m5);
+
+
+            alert("obtained mark "+result+" and Grade is "+MainGrade);
+
+
+
+        }
+    
+    
+    
+    
+    </script>
+</body>
+
+</html>
